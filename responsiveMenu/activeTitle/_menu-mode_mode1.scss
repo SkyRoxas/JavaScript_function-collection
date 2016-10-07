@@ -1,0 +1,58 @@
+.menu_mode1 {
+  @include responsive-display(block,block,none,none);
+  ul.menu {
+    @extend %flex;
+    @include justify-content(center);
+    @include flex-wrap(wrap);
+    border-top: 2px solid #155070;
+    border-bottom: 2px solid #155070;
+    li.menu__item {
+      display: block;
+      a {
+        display: block;
+        padding: 20px 30px;
+        @include responsive-padding(20px 30px,20px 15px,20px 30px,20px 30px);
+        color: #155070;
+        font-size: 25px;
+      }
+      a.active-trail {
+        color: #60B4CC;
+      }
+    }
+  }
+}
+.menu_mode1.responsive-menu {
+  @include responsive-display(none,none,block,block);
+  ul.menu {
+    display: block;
+    position: relative;
+    border: 0;
+    .menu_active {
+      text-align: center;
+      a {
+        border-top: 2px solid #155070;
+        border-bottom: 2px solid #155070;
+        display: block;
+        padding: 20px 30px;
+        color: #155070;
+        font-size: 25px;
+        position: relative;
+        &:after {
+          content: "く";
+          display: block;
+          @include absolute-align(right,center,0px 10px);
+          @include rotate(-90deg);
+          line-height: 5px;
+        }
+      }
+    }
+    .menu_wrap {
+      position: absolute;
+      width: 100%;
+      top: 100%;
+      background: #ffffff;
+      border-bottom: 2px solid #155070;
+      z-index: 100;
+    }
+  }
+}
