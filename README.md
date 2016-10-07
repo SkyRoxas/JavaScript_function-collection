@@ -1,4 +1,4 @@
-# fuction 說明文件
+# function 說明文件
 
 ## fakeAjax()
 
